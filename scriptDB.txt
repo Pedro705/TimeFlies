@@ -1,0 +1,23 @@
+CREATE TABLE person (
+	name	 VARCHAR(512),
+	password VARCHAR(512) UNIQUE NOT NULL,
+	auth	 VARCHAR(512),
+	PRIMARY KEY(name)
+);
+
+CREATE TABLE game (
+	id	 VARCHAR(512),
+	name VARCHAR(512),
+	url	 VARCHAR(512),
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE person_game (
+	person_name VARCHAR(512),
+	game_id	 VARCHAR(512),
+	PRIMARY KEY(person_name,game_id)
+);
+
+ALTER TABLE person_game ADD CONSTRAINT person_game_fk1 FOREIGN KEY (person_name) REFERENCES person(name);
+ALTER TABLE person_game ADD CONSTRAINT person_game_fk2 FOREIGN KEY (game_id) REFERENCES game(id);
+
