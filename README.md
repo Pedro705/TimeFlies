@@ -1,2 +1,2 @@
 # TimeFlies
-WebSite like TVTime but with games. Getting the games using Twitch API.
+WebSite like TVTime but for games. Getting the games using Twitch API.
